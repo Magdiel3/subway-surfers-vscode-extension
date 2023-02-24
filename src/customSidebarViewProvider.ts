@@ -41,42 +41,30 @@ export class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
       vscode.Uri.joinPath(this._extensionUri, "assets", "main.css")
     );
 
+    // Same for cat
+    const catUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "assets", "cat.png")
+    );
+
+    // Same for gif
+    const gifUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "assets", "movie.gif")
+    );
+
     // Use a nonce to only allow a specific script to be run.
     const nonce = getNonce();
 
     return `<!DOCTYPE html>
 			<html lang="en">
 			<head>
-				<meta charset="UTF-8">
-				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
-
 				<link href="${styleResetUri}" rel="stylesheet">
 				<link href="${styleVSCodeUri}" rel="stylesheet">
-				
         <link href="${stylesheetUri}" rel="stylesheet">
-				
 			</head>
 
 			<body>
-			<section class="wrapper">
-      <div class="container">
-            <div class="content">
-                <h2 class="subtitle">Subscribe today</h2>
-                <input type="text" class="mail" placeholder="Your email address" name="mail" required>
-                
-                <button class="add-color-button">Subscribe</button>
-                
-                <p class="text">We won’t send you spam.</p>
-                <p class="text">Unsubscribe at any time.</p>
-                
-            </div>
-      </div>
-			</section>
-			<!--<script nonce="${nonce}" src="${scriptUri}"></script>-->
+        <img src="${gifUri}">
+    </iframe>
       </body>
 
 			</html>`;
