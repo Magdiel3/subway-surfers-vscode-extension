@@ -1,14 +1,14 @@
 {
-  "name": "vscode-extension-sidebar-html",
-  "displayName": "Sidebar Html VS Code Extension",
-  "description": "Sidebar Html VS Code Extension",
-  "version": "1.0.0",
-  "publisher": "vscode-extension-webview",
-  "homepage": "https://github.com/KumarVariable/vscode-extension-sidebar-html/blob/afded57b2b4e13a002774b0d2d965b0a9024e83d/README.md",
+  "name": "subway-surfers-vscode-extension",
+  "displayName": "Subway Surfers VSCode Extension",
+  "description": "Lets you watch subway surfers gampleays while you code.",
+  "version": "0.0.1",
+  "publisher": "Magdiel3",
+  "homepage": "https://github.com/Magdiel3/subway-surfers-vscode-extension/",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KumarVariable/vscode-extension-sidebar-html.git"
+    "url": "https://github.com/KumarVariable/subway-surfers-vscode-extension.git"
   },
   "engines": {
     "vscode": "^1.61.0"
@@ -25,14 +25,14 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "custom-activitybar",
-          "title": "VSCode Extension",
-          "icon": "assets/logo_bito.svg"
+          "id": "subwaysurfers-bar",
+          "title": "Subway Surfers side gameplay",
+          "icon": "assets/capy.svg"
         }
       ]
     },
     "views": {
-      "custom-activitybar": [
+      "subwaysurfers-bar": [
         {
           "type": "webview",
           "id": "vscodeSidebar.openview",
@@ -82,6 +82,7 @@
     "glob": "^7.1.7",
     "mocha": "^9.1.1",
     "typescript": "^4.4.3",
-    "@vscode/test-electron": "^1.6.2"
+    "@vscode/test-electron": "^1.6.2",
+    "@vscode/vsce": "^2.11.0"
   }
 }
